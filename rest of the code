@@ -1,0 +1,26 @@
+       void Animate(Texture2D image,float framewidth, float frameheight, float frames, float pos_x)
+        {
+
+            
+            int frame = frames;
+
+            float frameWidth = framewidth;
+            float frameHeight = frameheight;
+
+            int maxframes = (int)(image.width / (int)frameWidth);
+
+            frame = frame % maxframes;
+
+            DrawTextureRec(
+                image,
+                Rectangle{
+                    (frameWidth * frame),
+                    (frameHeight * state),
+                    frameWidth, 
+                    frameHeight},
+                position,
+                color);
+        }
+
+        
+    };
