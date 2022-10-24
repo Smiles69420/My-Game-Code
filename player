@@ -1,0 +1,37 @@
+   Player player;
+
+    // Main game loop
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+
+        ClearBackground(GREEN);
+
+        timer += GetFrameTime() * 0.2;
+
+
+        if (timer >= 0.02f)
+        {
+            timer = 0.0f;
+            frame += 1;
+        }
+
+        
+
+        player.Animate(texture, framewidth, frameheight, frame, player_pos_x);
+
+       char state = (char) player.state;
+
+       
+
+        player.Move();
+
+        EndDrawing();
+
+    }
+
+    UnloadTexture(texture);
+
+    CloseWindow();
+
+    return 0;
